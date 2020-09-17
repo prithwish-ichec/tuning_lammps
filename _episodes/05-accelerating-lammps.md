@@ -572,7 +572,7 @@ before starting the production runs. This might save your lot of resource and ti
 > > Possible explanation:
 > > 1. For the smallest system, the number of atoms assigned to each GPU or MPI ranks is
 > >    very low. The system size is so small that considering GPU acceleration is practically meaningless. In this case you are emplying far too many workers to complete a small job and therefore it is not surprising that the scaling deteriorates with increasing MPI tasks. In fact, you may try to use 1 GPU and a few MPI task to see if the performance increases in this case.
-> > 2. Fix Me.
+> > 2. As the system size increases, normalied speed-up factor per node increases with increasing MPI tasks per GPU since in these cases the MPI tasks are busy in computing rather than spending time in communicating each other, i.e. computational overhead exceeds the communication overheads.
 > {: .solution}
 {: .challenge}
 
